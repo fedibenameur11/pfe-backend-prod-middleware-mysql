@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-/*
+
 @CrossOrigin(origins = "*")
 @AllArgsConstructor
 @RestController
@@ -43,4 +43,3 @@ public class ProjectController {
         projectService.removeProject(id_project);
     }
 }
-*/

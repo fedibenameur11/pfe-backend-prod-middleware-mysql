@@ -8,7 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-/*
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user")
@@ -48,4 +48,3 @@ public class UserController {
         userService.removeUser(id_user);
     }
 }
-*/
