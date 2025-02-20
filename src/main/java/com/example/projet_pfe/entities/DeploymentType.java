@@ -1,6 +1,6 @@
 package com.example.projet_pfe.entities;
 
-public enum DeployementType {
+public enum DeploymentType {
     Docker_Compose,
     Kubernetes,
     AWS,

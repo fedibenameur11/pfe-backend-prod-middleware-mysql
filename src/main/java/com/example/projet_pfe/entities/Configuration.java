@@ -23,7 +23,7 @@ public class Configuration implements Serializable {
     @Enumerated(EnumType.STRING)
     MiddlewareType middleware;
     @Enumerated(EnumType.STRING)
-    DeployementType deployment;
+    DeploymentType deployment;
     @Enumerated(EnumType.STRING)
     AuthenticationType authentication;
     @Enumerated(EnumType.STRING)
