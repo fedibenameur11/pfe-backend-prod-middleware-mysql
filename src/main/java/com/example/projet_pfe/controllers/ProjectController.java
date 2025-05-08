@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @AllArgsConstructor
 @RestController
-@RequestMapping("/project")
+@RequestMapping("//api/project")
 public class ProjectController {
     Iproject projectService;
     @GetMapping("/list")

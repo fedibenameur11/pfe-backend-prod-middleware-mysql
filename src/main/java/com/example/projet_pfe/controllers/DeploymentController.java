@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 @RestController
-@RequestMapping("/deploy")
+@RequestMapping("/api/deploy")
 public class DeploymentController {
 
     @Autowired

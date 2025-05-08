@@ -18,6 +18,7 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 @Configuration
 @RequiredArgsConstructor
@@ -26,13 +27,13 @@ public class BeansConfig {
     public AuditorAware<String> auditorAware() {
         return new ApplicationAuditAware();
     }
-
+/*
     @Bean
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+        config.setAllowedOrigins(Collections.singletonList("*"));//http://localhost:4200
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.ORIGIN,
                 HttpHeaders.CONTENT_TYPE,
@@ -44,11 +45,26 @@ public class BeansConfig {
                 "POST",
                 "DELETE",
                 "PUT",
-                "PATCH"
+                "PATCH",
+                "OPTIONS"
         ));
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
 
     }
+*/
+@Bean
+public CorsFilter corsFilter() {
+    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    final CorsConfiguration config = new CorsConfiguration();
 
+    config.setAllowCredentials(true);
+    config.setAllowedOrigins(List.of("http://192.168.37.129")); // Origin exact
+    config.setAllowedHeaders(List.of("*"));
+    config.setAllowedMethods(List.of("*"));
+    config.setExposedHeaders(List.of("Authorization")); // Header critique
+
+    source.registerCorsConfiguration("/**", config);
+    return new CorsFilter(source);
+}
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @AllArgsConstructor
 @RestController
-@RequestMapping("/configuration")
+@RequestMapping("/api/configuration")
 public class ConfigurationController {
     Iconfiguration configurationService;
     @GetMapping("/list")
