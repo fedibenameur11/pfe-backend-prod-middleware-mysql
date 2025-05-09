@@ -59,7 +59,7 @@ public CorsFilter corsFilter() {
     final CorsConfiguration config = new CorsConfiguration();
 
     config.setAllowCredentials(true);
-    config.setAllowedOrigins(List.of("http://192.168.37.129")); // Origin exact
+    config.setAllowedOrigins(List.of("*")); // Origin exact // it was "http://192.168.37.129"
     config.setAllowedHeaders(List.of("*"));
     config.setAllowedMethods(List.of("*"));
     config.setExposedHeaders(List.of("Authorization")); // Header critique
