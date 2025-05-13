@@ -38,8 +38,8 @@ public class SecurityConfig {
                                 "/configuration/security",
                                 "/swagger-ui/**",
                                 "/webjars/**",
-                                "/swagger-ui.html",
-                                "/actuator/prometheus" // <-- Autorisé sans token
+                                "/swagger-ui.html"
+                                //"/actuator/prometheus" // <-- Autorisé sans token
                                 //"/api/**"
                         ).permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/prometheus").permitAll()
