@@ -39,10 +39,11 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/webjars/**",
                                 "/swagger-ui.html",
-                                "/actuator/prometheus" // <-- Autorisé sans token
+                                "/actuator/prometheus", // <-- Autorisé sans token
+                                "/api/**"
                         ).permitAll()
-                        .requestMatchers("/api/**").authenticated()
-                        .anyRequest().authenticated()
+                        //.requestMatchers("/api/**").authenticated()
+                        //.anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(auth ->
                         auth.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
