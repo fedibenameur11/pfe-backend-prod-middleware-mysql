@@ -14,7 +14,7 @@ public class ActiveMQConfig {
 
     @Bean
     public ActiveMQConnectionFactory connectionFactory() {
-        return new ActiveMQConnectionFactory("tcp://localhost:61616"); // modifie si besoin
+        return new ActiveMQConnectionFactory("tcp://192.168.37.129:61616"); // modifie si besoin
     }
 
     @Bean
