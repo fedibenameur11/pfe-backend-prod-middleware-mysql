@@ -48,12 +48,22 @@ public class MessageConsumer {
     }*/
 
 ///////////KAfka
-    private static final String TOPIC_NAME = "myTopic";
+    /*private static final String TOPIC_NAME = "myTopic";
 
     @KafkaListener(topics = TOPIC_NAME, groupId = "pfe_group")
     public void receiveMessage(String message) {
         System.out.println("Received message from Kafka topic " + TOPIC_NAME + ": " + message);
         // Add business logic, e.g., save to PostgreSQL or process the message
+    }*/
+
+///////////IBMMQ
+
+    private static final String QUEUE_NAME = "myQueue"; // Remplacez par le nom de votre queue IBM MQ
+
+    @JmsListener(destination = QUEUE_NAME)
+    public void receiveMessage(String message) {
+        System.out.println("Received message from IBM MQ queue " + QUEUE_NAME + ": " + message);
+        // Ajoutez votre logique métier ici, par exemple, sauvegarder dans PostgreSQL
     }
 
 

@@ -51,7 +51,7 @@ public class MessageProducer {
     }*/
 
 ///////////////Kafka
-    private static final String TOPIC_NAME = "myTopic";
+    /*private static final String TOPIC_NAME = "myTopic";
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
@@ -59,6 +59,17 @@ public class MessageProducer {
     public void sendMessage(String message) {
         kafkaTemplate.send(TOPIC_NAME, message);
         System.out.println("Sent message to Kafka topic " + TOPIC_NAME + ": " + message);
+    }*/
+
+///////////IBMMQ
+    @Autowired
+    private JmsTemplate jmsTemplate;
+
+    private static final String QUEUE_NAME = "myQueue"; // Remplacez par le nom de votre queue IBM MQ
+
+    public void sendMessage(String message) {
+        jmsTemplate.convertAndSend(QUEUE_NAME, message);
+        System.out.println("Sent message to IBM MQ queue " + QUEUE_NAME + ": " + message);
     }
 
 
