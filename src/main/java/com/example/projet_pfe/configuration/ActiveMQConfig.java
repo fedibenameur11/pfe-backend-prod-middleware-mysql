@@ -10,7 +10,7 @@ import org.springframework.jms.core.JmsTemplate;
 @EnableJms
 public class ActiveMQConfig {
 
-    public static final String QUEUE_NAME = "myQueue";
+    /*public static final String QUEUE_NAME = "myQueue";
 
     @Bean
     public ActiveMQConnectionFactory connectionFactory() {
@@ -28,5 +28,5 @@ public class ActiveMQConfig {
         factory.setConnectionFactory(connectionFactory());
         factory.setConcurrency("1-1");  // 1 listener
         return factory;
-    }
+    }*/
 }
