@@ -14,6 +14,9 @@ import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
 @Component
 public class MessageConsumer {
 //////RabbitMQ
@@ -31,8 +34,8 @@ public class MessageConsumer {
     }*/
 
 //////////NATS
-@Autowired
-private Connection natsConnection;
+    /*@Autowired
+    private Connection natsConnection;
 
     @PostConstruct
     public void init() {
@@ -42,6 +45,15 @@ private Connection natsConnection;
             // Logique métier ici
         });
         dispatcher.subscribe(NatsConfig.SUBJECT_NAME);
+    }*/
+
+///////////KAfka
+    private static final String TOPIC_NAME = "myTopic";
+
+    @KafkaListener(topics = TOPIC_NAME, groupId = "pfe_group")
+    public void receiveMessage(String message) {
+        System.out.println("Received message from Kafka topic " + TOPIC_NAME + ": " + message);
+        // Add business logic, e.g., save to PostgreSQL or process the message
     }
 
 

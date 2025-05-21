@@ -12,6 +12,10 @@ import io.nats.client.Connection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
 @Service
 public class MessageProducer {
 ///////////RabbitMq
@@ -34,8 +38,8 @@ public class MessageProducer {
     }*/
 
 //////////NATS
-@Autowired
-private Connection natsConnection;
+    /*@Autowired
+    private Connection natsConnection;
 
     public void sendMessage(String message) {
         try {
@@ -44,6 +48,17 @@ private Connection natsConnection;
         } catch (Exception e) {
             System.err.println("Error sending message to NATS: " + e.getMessage());
         }
+    }*/
+
+///////////////Kafka
+    private static final String TOPIC_NAME = "myTopic";
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
+    public void sendMessage(String message) {
+        kafkaTemplate.send(TOPIC_NAME, message);
+        System.out.println("Sent message to Kafka topic " + TOPIC_NAME + ": " + message);
     }
 
 
