@@ -20,11 +20,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageConsumer {
 //////RabbitMQ
-    /*@RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
+    @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
     public void receiveMessage(String message) {
         System.out.println("Received message: " + message);
         // Add business logic, e.g., save to PostgreSQL or process the message
-    }*/
+    }
 //////ActiveMQ
 
     /*@JmsListener(destination = ActiveMQConfig.QUEUE_NAME)
@@ -58,13 +58,14 @@ public class MessageConsumer {
 
 ///////////IBMMQ
 
-    private static final String QUEUE_NAME = "myQueue"; // Remplacez par le nom de votre queue IBM MQ
+   /* private static final String QUEUE_NAME = "myQueue"; // Remplacez par le nom de votre queue IBM MQ
 
     @JmsListener(destination = QUEUE_NAME)
     public void receiveMessage(String message) {
         System.out.println("Received message from IBM MQ queue " + QUEUE_NAME + ": " + message);
         // Ajoutez votre logique métier ici, par exemple, sauvegarder dans PostgreSQL
     }
+    */
 
 
 }
