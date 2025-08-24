@@ -19,13 +19,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageProducer {
 ///////////RabbitMq
-    /*@Autowired
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     public void sendMessage(String message) {
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY, message);
         System.out.println("Sent message: " + message);
-    }*/
+    }
 
 //////ActiveMQ
 
@@ -62,7 +62,7 @@ public class MessageProducer {
     }*/
 
 ///////////IBMMQ
-    @Autowired
+    /* @Autowired
     private JmsTemplate jmsTemplate;
 
     private static final String QUEUE_NAME = "myQueue"; // Remplacez par le nom de votre queue IBM MQ
@@ -70,7 +70,7 @@ public class MessageProducer {
     public void sendMessage(String message) {
         jmsTemplate.convertAndSend(QUEUE_NAME, message);
         System.out.println("Sent message to IBM MQ queue " + QUEUE_NAME + ": " + message);
-    }
+    } */
 
 
 }
