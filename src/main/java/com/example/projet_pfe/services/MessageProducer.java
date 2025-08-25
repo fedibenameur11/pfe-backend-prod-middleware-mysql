@@ -19,23 +19,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageProducer {
 ///////////RabbitMq
-    @Autowired
+    /*@Autowired
     private RabbitTemplate rabbitTemplate;
 
     public void sendMessage(String message) {
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY, message);
         System.out.println("Sent message: " + message);
-    }
+    }*/
 
 //////ActiveMQ
 
-    /*@Autowired
+    @Autowired
     private JmsTemplate jmsTemplate;
 
     public void sendMessage(String message) {
         jmsTemplate.convertAndSend(ActiveMQConfig.QUEUE_NAME, message);
         System.out.println("Sent message: " + message);
-    }*/
+    }
 
 //////////NATS
     /*@Autowired
