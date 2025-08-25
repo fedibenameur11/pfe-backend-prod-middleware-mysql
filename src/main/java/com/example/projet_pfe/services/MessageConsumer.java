@@ -20,18 +20,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageConsumer {
 //////RabbitMQ
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
+    /*@RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
     public void receiveMessage(String message) {
         System.out.println("Received message: " + message);
         // Add business logic, e.g., save to PostgreSQL or process the message
-    }
+    }*/
 //////ActiveMQ
 
-    /*@JmsListener(destination = ActiveMQConfig.QUEUE_NAME)
+    @JmsListener(destination = ActiveMQConfig.QUEUE_NAME)
     public void receiveMessage(String message) {
         System.out.println("Received message: " + message);
         // Logique métier ici
-    }*/
+    }
 
 //////////NATS
     /*@Autowired
